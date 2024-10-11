@@ -85,7 +85,7 @@ The Godown Inventory Management System is a Tree View Application designed to ma
    npm run dev
    ```
 
-2. Access the application at `[https://godown.vercel.app/](https://godown.vercel.app/)`.
+2. Access the application at [http://localhost:3000/](http://localhost:3000/).
 
 3. For production build:
 
