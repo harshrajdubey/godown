@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (min-width: 768px) {
+  #tooglebtn {
+    display: none; /* Hide toggle button on desktop */
+  }
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -9,7 +16,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0d1317;
     --foreground: #ededed;
   }
 }
