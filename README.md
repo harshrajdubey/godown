@@ -1,37 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Godown Inventory Management System
 
-## Getting Started
+## Table of Contents
 
-First, run the development server:
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Technology Stack](#technology-stack)
+4. [Folder Structure](#folder-structure)
+5. [Installation](#installation)
+6. [Usage](#usage)
+7. [API Endpoints](#api-endpoints)
+8. [Database Scheme](#database-scheme)
+9. [Contributing](#contributing)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Project Overview
+
+The Godown Inventory Management System is a Tree View Application designed to manage and visualize the hierarchy of godowns (warehouses), sub-locations, and stored items. This application provides users with a dashboard to efficiently manage their inventory by displaying a sidebar with locations and a details panel for selected items.
+
+## Features
+
+- **Login Page**: Secure access to the dashboard.
+- **Dashboard Page**:
+  - **Sidebar**: Displays the hierarchical structure of godowns and items.
+  - **Details Panel**: Shows details of the selected item.
+- **Search Functionality**: Quickly find items by name.
+- **Expandable Tree View**: Visualize the relationships between godowns, sub-godowns, and items.
+
+## Technology Stack
+
+- **Frontend**: React, Next.js
+- **Backend**: Node.js
+- **Database**: Vercel Postgres
+- **Deployment**: Vercel
+- **Styling**: CSS, Inline styles
+
+## Folder Structure
+
+```plaintext
+/godown
+├── /app
+│   ├── /api
+│   │   ├── godowns.js        # API for fetching godowns
+│   │   └── items.js          # API for fetching items
+│   ├── /components
+│   │   ├── Sidebar.js         # Sidebar component
+│   │   └── ItemDetails.js     # Item Details component
+│   ├── /pages
+│   │   ├── login.js           # Login page
+│   │   └── dashboard.js       # Dashboard page
+│   └── /styles
+│       └── global.css         # Global styles
+├── /public
+│   └── /images                # Static Images
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/harshrajdubey/godown.git
+   ```
 
-## Learn More
+2. Navigate to the project directory:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   cd godown
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Install the required dependencies:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+4. Set up the database and environment variables as necessary.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# godown" 
+1. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+2. Access the application at [http://localhost:3000/](http://localhost:3000/).
+
+3. For production build:
+
+   ```bash
+   npm run build
+   ```
+
+4. Deploy to Vercel:
+
+   ```bash
+   vercel deploy
+   ```
+
+## API Endpoints
+
+- `GET /api/godowns`: Fetches a list of all godowns.
+- `GET /api/items?search=term`: Fetches items based on a search term.
+
+
+## Database Schema
+
+The application utilizes three tables in the database:
+
+### 1. `admin`
+
+| Column     | Type   |
+|------------|--------|
+| username   | String |
+| email      | String |
+| password   | String |
+
+### 2. `godown`
+
+| Column        | Type   |
+|---------------|--------|
+| id            | Integer |
+| name          | String  |
+| parent_godown | Integer (nullable) |
+
+### 3. `items`
+
+| Column                | Type    |
+|-----------------------|---------|
+| item_id               | Integer |
+| name                  | String  |
+| quantity              | Integer |
+| category              | String  |
+| price                 | Decimal |
+| status                | String  |
+| godown_id             | Integer |
+| brand                 | String  |
+| attributes.type       | String  |
+| attributes.material    | String  |
+| attributes.warranty_years | Integer |
+| image_url             | String  |
+| attributes.size       | String  |
+| attributes.color      | String  |
+| attributes.age_range  | String  |
+| attributes.battery_required | Boolean |
+| attributes.dimensions | String  |
+| attributes.wattage    | Decimal |
+| attributes.voltage     | Decimal |
+
+
+## Contributing
+
+Contributions are welcome! Please follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-branch`.
+3. Make your changes and commit them: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin feature-branch`.
+5. Create a pull request.
