@@ -86,14 +86,17 @@ The Godown Inventory Management System is a Tree View Application designed to ma
    ```
 
 2. Access the application at [http://localhost:3000/](http://localhost:3000/).
+Login Details
+test@test.com
+123
 
-3. For production build:
+4. For production build:
 
    ```bash
    npm run build
    ```
 
-4. Deploy to Vercel:
+5. Deploy to Vercel:
 
    ```bash
    vercel deploy
@@ -121,9 +124,9 @@ The application utilizes three tables in the database:
 
 | Column        | Type   |
 |---------------|--------|
-| id            | Integer |
+| id            | String |
 | name          | String  |
-| parent_godown | Integer (nullable) |
+| parent_godown | String (nullable) |
 
 ### 3. `items`
 
@@ -139,12 +142,12 @@ The application utilizes three tables in the database:
 | brand                 | String  |
 | attributes.type       | String  |
 | attributes.material    | String  |
-| attributes.warranty_years | Integer |
+| attributes.warranty_years | String |
 | image_url             | String  |
 | attributes.size       | String  |
 | attributes.color      | String  |
 | attributes.age_range  | String  |
-| attributes.battery_required | Boolean |
+| attributes.battery_required | String |
 | attributes.dimensions | String  |
 | attributes.wattage    | Decimal |
 | attributes.voltage     | Decimal |
