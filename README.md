@@ -39,18 +39,21 @@ The Godown Inventory Management System is a Tree View Application designed to ma
 /godown
 ├── /app
 │   ├── /api
-│   │   ├── godowns.js        # API for fetching godowns
-│   │   └── items.js          # API for fetching items
-│   ├── /components
-│   │   ├── Sidebar.js         # Sidebar component
-│   │   └── ItemDetails.js     # Item Details component
-│   ├── /pages
-│   │   ├── login.js           # Login page
-│   │   └── dashboard.js       # Dashboard page
-│   └── /styles
-│       └── global.css         # Global styles
+│   │   ├── godowns/route.ts        # API for fetching godowns
+│   │   └── items/route.ts          # API for fetching items
+│   ├── /lib
+│   │   ├── actions.ts         # Sidebar component
+│   │   └── definations.ts     # Prototypes
+│   │   └── sidebar.tsx        # Item Details component
+│   ├── /login
+│   │   ├── page.tsx           # Dashboard page
+│   ├── /ui
+│   │   ├── login-form.tsx           # Dashboard page
+│   ├── /dashboard
+│   │   ├── page.tsx           # Dashboard page
+│   └── /globals.css            #Global Styles
 ├── /public
-│   └── /images                # Static Images
+│   └── /images                # Static Images (logo)
 ├── package.json
 └── README.md
 ```
