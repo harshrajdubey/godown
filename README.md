@@ -48,7 +48,7 @@ The Godown Inventory Management System is a Tree View Application designed to ma
 │   ├── /login
 │   │   ├── page.tsx           # Dashboard page
 │   ├── /ui
-│   │   ├── login-form.tsx           # Dashboard page
+│   │   ├── login-form.tsx     # Form Component
 │   ├── /dashboard
 │   │   ├── page.tsx           # Dashboard page
 │   └── /globals.css            #Global Styles
