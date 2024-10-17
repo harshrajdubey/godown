@@ -11,7 +11,6 @@ async function getGodowns(parent_godown: string | null): Promise<QueryResultRow[
   } else {
     const { rows, fields } = await sql`SELECT * FROM godown WHERE parent_godown is null`;
     return rows;
-
   }
   // console.log(rows);
 }

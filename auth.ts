@@ -29,8 +29,6 @@ export const { auth, signIn, signOut } = NextAuth({
        if (parsedCredentials.success) {
           const { email, password } = parsedCredentials.data;
 
-          const pass= await bcrypt.hash('123', 10);
-
           const admin = await getAdmin(email);
           console.log(admin);
           if (!admin) return null;
